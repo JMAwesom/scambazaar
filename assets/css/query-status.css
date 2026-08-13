@@ -1,0 +1,75 @@
+/* ============================================
+Bazaar Query Status Styles
+============================================ */
+
+.query-result {
+    margin-top: 26px;
+    background: #111827;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.query-result h2 {
+    font-family: "JetBrainsMonoNerdFont-BoldItalic", "JetBrains Mono Nerd Font", monospace;
+    color: #f2d5cf;
+    font-size: 22px;
+    margin: 0 0 10px;
+    text-align: left;
+}
+
+.query-result-meta {
+    color: #949cbb;
+    font-size: 13px;
+    margin-bottom: 14px;
+    line-height: 1.6;
+}
+
+.query-status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.query-status-badge.pending {
+    color: #e5c890;
+    background: rgba(229, 200, 144, 0.12);
+    border: 1px solid rgba(229, 200, 144, 0.35);
+}
+
+.query-status-badge.answered {
+    color: #a6d189;
+    background: rgba(166, 209, 137, 0.12);
+    border: 1px solid rgba(166, 209, 137, 0.35);
+}
+
+.query-original-message,
+.query-response-message {
+    background: #232634;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 14px;
+    white-space: pre-wrap;
+    line-height: 1.6;
+    color: #c6d0f5;
+}
+
+.query-response-item {
+    margin-top: 16px;
+    padding-left: 14px;
+    border-left: 3px solid #8caaee;
+}
+
+.query-response-item .response-meta {
+    font-size: 12px;
+    color: #949cbb;
+    margin-bottom: 8px;
+}
+
+.no-response-yet {
+    color: #949cbb;
+    font-style: italic;
+}

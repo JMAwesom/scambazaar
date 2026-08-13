@@ -1,0 +1,532 @@
+/* ============================================
+Bazaar Base Styles
+Shared across all pages
+============================================ */
+
+:root {
+    --bg: #292c3c;
+    --container: #303446;
+    --panel: #111827;
+    --panel-2: #232634;
+    --text: #c6d0f5;
+    --muted: #949cbb;
+    --heading: #f2d5cf;
+    --accent: #8caaee;
+    --line: rgba(255, 255, 255, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 0 auto;
+    background: var(--container);
+}
+
+/* ============================================
+Header
+============================================ */
+
+.headcon {
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 18px;
+    position: relative;
+    background: linear-gradient(180deg, #1b1f2a 0%, #232634 100%);
+    border-bottom: 1px solid var(--line);
+    overflow: visible;
+}
+
+#logo-holder {
+    height: 100%;
+    width: 72px;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.35));
+    text-decoration: none;
+}
+
+#logo-holder img {
+    display: block;
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+}
+
+/* ============================================
+Desktop Navigation
+============================================ */
+
+.main-nav {
+    flex: 1;
+    min-width: 0;
+}
+
+.main-nav > ul {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2px;
+}
+
+.main-nav > ul > li {
+    position: relative;
+}
+
+.main-nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 80px;
+    padding: 0 12px;
+    color: #cdd6f4;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.main-nav > ul > li > a:hover,
+.main-nav > ul > li > a:focus-visible {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.main-nav a.active-page {
+    color: #ffffff;
+    box-shadow: inset 0 -3px 0 var(--accent);
+}
+
+.has-submenu > a::after {
+    content: " ▾";
+    margin-left: 6px;
+    font-size: 10px;
+    opacity: 0.75;
+    display: inline-block;
+    transition: transform 0.25s ease;
+}
+
+/* ============================================
+Dropdown
+============================================ */
+
+.has-submenu .submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    background: #1f2430;
+    border: 1px solid var(--line);
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+    z-index: 9999;
+    padding: 6px 0;
+    pointer-events: none;
+}
+
+.has-submenu:hover .submenu,
+.has-submenu:focus-within .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.submenu a {
+    display: block;
+    min-height: auto;
+    width: 100%;
+    padding: 10px 18px;
+    color: #cdd6f4;
+    text-decoration: none;
+    font-size: 13px;
+    white-space: nowrap;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.submenu a:hover,
+.submenu a:focus-visible {
+    background: rgba(140, 170, 238, 0.15);
+    color: #ffffff;
+}
+
+/* ============================================
+Search Bar
+============================================ */
+
+.searchbar {
+    margin-left: auto;
+    flex: 0 0 auto;
+}
+
+.searchbar input {
+    width: 190px;
+    height: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    padding: 0 14px;
+    background: #2e3447;
+    color: var(--text);
+    outline: none;
+    transition:
+        width 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+    font-family: "JetBrainsMonoNerdFont-BoldItalic", "JetBrains Mono Nerd Font", monospace;
+}
+
+.searchbar input::placeholder {
+    color: rgba(198, 208, 245, 0.72);
+}
+
+.searchbar input:hover,
+.searchbar input:focus {
+    width: 220px;
+    border-color: var(--accent);
+    background: #3a4158;
+    box-shadow: 0 0 0 3px rgba(140, 170, 238, 0.15);
+}
+
+/* ============================================
+Shared Hero / Buttons / Flash
+============================================ */
+
+.page-hero {
+    text-align: center;
+    padding: 50px 20px 30px;
+    background: linear-gradient(145deg, #1f2430, #2b3040);
+    border-bottom: 1px solid var(--line);
+}
+
+.page-hero h1 {
+    font-family: "JetBrainsMonoNerdFont-BoldItalic", "JetBrains Mono Nerd Font", monospace;
+    font-size: 40px;
+    color: var(--heading);
+    margin: 0 0 10px;
+    letter-spacing: 0.04em;
+}
+
+.page-hero p {
+    font-size: 18px;
+    color: #b5bfe2;
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 14px 40px;
+    background: var(--accent);
+    color: #232634;
+    font-weight: 700;
+    text-decoration: none;
+    border: none;
+    border-radius: 999px;
+    font-size: 16px;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.cta-btn:hover {
+    background: #a6c0f5;
+    transform: scale(1.04);
+}
+
+.flash {
+    width: min(1100px, calc(100% - 36px));
+    margin: 18px auto 0;
+    padding: 14px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.flash.success {
+    background: rgba(166, 209, 137, 0.12);
+    color: #a6d189;
+    border: 1px solid rgba(166, 209, 137, 0.35);
+}
+
+.flash.error {
+    background: rgba(234, 158, 158, 0.12);
+    color: #ea9a9a;
+    border: 1px solid rgba(234, 158, 158, 0.35);
+}
+
+/* ============================================
+Footer
+============================================ */
+
+#footer {
+    min-height: 64px;
+    width: 100%;
+    background: #626880;
+    color: var(--text);
+    font-family: "JetBrainsMonoNerdFont-BoldItalic", "JetBrains Mono Nerd Font", monospace;
+    border-top: 1px solid var(--line);
+    margin-top: 40px;
+}
+
+#footer ul {
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 12px;
+}
+
+#footer a {
+    color: var(--text);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+}
+
+#footer a:hover {
+    color: #e5c890;
+}
+
+/* ============================================
+Burger Menu Shared Styles
+============================================ */
+
+.burger-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1000;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    flex: 0 0 auto;
+    order: 1;
+}
+
+.burger-toggle .burger-line {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background-color: #cdd6f4;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.burger-toggle.active .burger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.burger-toggle.active .burger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-toggle.active .burger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.mobile-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 998;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.mobile-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ============================================
+Responsive Burger Mode
+============================================ */
+
+@media screen and (max-width: 900px) {
+    .burger-toggle {
+        display: flex;
+    }
+
+    .mobile-overlay {
+        display: block;
+    }
+
+    .main-nav {
+        position: fixed;
+        top: 0;
+        right: -300px;
+        width: 280px;
+        max-width: 80vw;
+        height: 100vh;
+        height: 100dvh;
+        background: #232634;
+        padding: 80px 20px 24px;
+        box-shadow: -4px 0 24px rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow-y: auto;
+        flex: none;
+    }
+
+    .main-nav.open {
+        right: 0;
+    }
+
+    .main-nav > ul {
+        flex-direction: column;
+        gap: 2px;
+        height: auto;
+    }
+
+    .main-nav > ul > li {
+        position: static;
+    }
+
+    .main-nav > ul > li > a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: auto;
+        padding: 14px 16px;
+        font-size: 1.05rem;
+        border-radius: 8px;
+    }
+
+    .main-nav a.active-page {
+        box-shadow: none;
+        background: rgba(140, 170, 238, 0.15);
+    }
+
+    .has-submenu > a::after {
+        content: " ▾";
+        font-size: 12px;
+        transition: transform 0.3s ease;
+        margin-left: 6px;
+        opacity: 0.6;
+    }
+
+    .has-submenu.submenu-open > a::after {
+        transform: rotate(180deg);
+        opacity: 1;
+    }
+
+    .has-submenu .submenu {
+        position: static;
+        left: auto;
+        min-width: auto;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.2);
+        border: none;
+        border-radius: 0 0 8px 8px;
+        box-shadow: none;
+        transform: none;
+        padding: 0;
+        margin: 0;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+
+    .has-submenu.submenu-open .submenu {
+        max-height: 300px;
+        padding: 6px 0;
+    }
+
+    .submenu a {
+        font-size: 0.95rem;
+        padding: 11px 16px;
+        text-align: center;
+        color: rgba(205, 214, 244, 0.85);
+        white-space: normal;
+        border-radius: 0;
+    }
+
+    .submenu a:hover,
+    .submenu a:focus-visible {
+        background: rgba(140, 170, 238, 0.12);
+        color: #ffffff;
+    }
+
+    .headcon {
+        min-height: 64px;
+        padding: 10px 16px;
+        justify-content: flex-start;
+        gap: 10px;
+    }
+
+    #logo-holder {
+        width: 56px;
+        order: 0;
+    }
+
+    #logo-holder img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .searchbar {
+        margin-left: auto;
+        order: 2;
+    }
+
+    .searchbar input {
+        width: 140px;
+    }
+
+    .searchbar input:hover,
+    .searchbar input:focus {
+        width: 160px;
+    }
+
+    .page-hero h1 {
+        font-size: 28px;
+    }
+
+    #footer ul {
+        flex-direction: column;
+        gap: 8px;
+    }
+}

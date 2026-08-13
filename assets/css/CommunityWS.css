@@ -1,0 +1,1018 @@
+/* ============================================
+   Bazaar's Community — Unified Stylesheet
+   Desktop nav above 900px, burger menu ≤ 900px
+   ============================================ */
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #292c3c;
+    color: #c6d0f5;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 0 auto;
+    background-color: #303446;
+}
+
+/* ── Header ────────────────────────────────── */
+.headcon {
+    height: 80px;
+    font-size: larger;
+    background: linear-gradient(180deg, #1b1f2a 0%, #232634 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 18px;
+    box-sizing: border-box;
+    overflow: visible;
+}
+
+.headcon ul {
+    margin: 0;
+    padding: 0;
+}
+
+#logo-holder {
+    height: 100%;
+    width: 72px;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 0 8px rgba(0,0,0,0.35));
+    text-decoration: none;
+}
+
+#logo-holder img {
+    display: block;
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+}
+
+/* ── Desktop Navigation (> 900px) ──────────── */
+.main-nav {
+    flex: 1;
+    min-width: 0;
+}
+
+.main-nav > ul {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2px;
+}
+
+.main-nav > ul > li {
+    position: relative;
+}
+
+.main-nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 80px;
+    padding: 0 12px;
+    color: #cdd6f4;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.main-nav > ul > li > a:hover,
+.main-nav > ul > li > a:focus-visible {
+    color: #ffffff;
+    background: rgba(255,255,255,0.05);
+}
+
+.main-nav > ul > li.current > a {
+    color: #ffffff;
+    box-shadow: inset 0 -3px 0 #8caaee;
+}
+
+.has-submenu > a::after {
+    content: " ▾";
+    margin-left: 6px;
+    font-size: 10px;
+    opacity: 0.75;
+    display: inline-block;
+    transition: transform 0.25s ease;
+}
+
+/* ── Search Bar ────────────────────────────── */
+.searchbar {
+    margin-left: auto;
+    flex: 0 0 auto;
+}
+
+.searchbar input {
+    width: 190px;
+    height: 30px;
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 999px;
+    padding: 0 14px;
+    background: #2e3447;
+    color: #c6d0f5;
+    outline: none;
+    transition: width 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    font-family: "JetBrainsMonoNerdFont-BoldItalic", "JetBrains Mono Nerd Font", monospace;
+}
+
+.searchbar input::placeholder {
+    color: rgba(198, 208, 245, 0.72);
+}
+
+.searchbar input:hover,
+.searchbar input:focus {
+    width: 220px;
+    border-color: #8caaee;
+    background: #3a4158;
+    box-shadow: 0 0 0 3px rgba(140, 170, 238, 0.15);
+}
+
+/* ── Desktop Submenu Dropdowns ─────────────── */
+.has-submenu .submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    background: #1f2430;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 18px 32px rgba(0,0,0,0.35);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+    z-index: 9999;
+    padding: 6px 0;
+    pointer-events: none;
+}
+
+.has-submenu:hover .submenu,
+.has-submenu:focus-within .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.submenu li {
+    list-style: none;
+}
+
+.submenu a {
+    display: block;
+    min-height: auto;
+    width: 100%;
+    padding: 10px 18px;
+    color: #cdd6f4;
+    text-decoration: none;
+    font-size: 13px;
+    transition: background 0.15s ease, color 0.15s ease;
+    white-space: nowrap;
+    text-transform: none;
+    letter-spacing: 0.02em;
+}
+
+.submenu a:hover,
+.submenu a:focus-visible {
+    background: rgba(140, 170, 238, 0.15);
+    color: #ffffff;
+}
+
+.main-nav > ul > li:last-child > a {
+    margin-right: 8px;
+}
+
+/* ── Headings ──────────────────────────────── */
+h1 {
+    margin: 18px 0 4px;
+    color: #f2d5cf;
+    text-align: center;
+    font-size: 34px;
+    letter-spacing: 0.04em;
+    font-family: "JetBrainsMonoNerdFont-BoldItalic", "JetBrains Mono Nerd Font", monospace;
+}
+
+h2 {
+    margin: 0 0 24px;
+    color: #b5bfe2;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* ── Footer ────────────────────────────────── */
+#footer {
+    height: 64px;
+    width: 100%;
+    background: #626880;
+    color: #c6d0f5;
+    font-family: "JetBrainsMonoNerdFont-BoldItalic", "JetBrains Mono Nerd Font", monospace;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+#footer ul {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+#footer a {
+    color: #c6d0f5;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+}
+
+#footer a:hover {
+    color: #e5c890;
+}
+
+/* ── Community Layout ──────────────────────── */
+.community-wrap {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 20px;
+    padding: 0 18px 30px;
+    box-sizing: border-box;
+    align-items: start;
+}
+
+/* ── Profile Banner ────────────────────────── */
+.profile-banner {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 22px;
+    margin-bottom: 22px;
+    background: linear-gradient(120deg, #1f2430 0%, #2b3040 55%, #232634 100%);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 10px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+}
+
+.avatar {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+    font-family: "JetBrainsMonoNerdFont-BoldItalic", "JetBrains Mono Nerd Font", monospace;
+    font-weight: 700;
+    font-size: 22px;
+    color: #232634;
+    background: linear-gradient(135deg, #8caaee, #f2d5cf);
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.08);
+    background-size: cover;
+}
+
+.avatar.large {
+    width: 72px;
+    height: 72px;
+    font-size: 26px;
+    background-image: url('assets/Images/profile.gif');
+    background-size: cover;
+}
+
+.profile-banner .who {
+    flex: 1;
+    min-width: 0;
+}
+
+.profile-banner .display-name {
+    font-family: "JetBrainsMonoNerdFont-BoldItalic", "JetBrains Mono Nerd Font", monospace;
+    font-size: 20px;
+    color: #f2d5cf;
+    letter-spacing: 0.02em;
+}
+
+.profile-banner .handle {
+    font-size: 12px;
+    color: #949cbb;
+    margin-top: 2px;
+}
+
+.stat-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.stat-pill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 76px;
+    padding: 6px 12px;
+    background: rgba(140, 170, 238, 0.08);
+    border: 1px solid rgba(140, 170, 238, 0.18);
+    border-radius: 6px;
+}
+
+.stat-pill .num {
+    font-size: 15px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.stat-pill .lbl {
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #949cbb;
+    margin-top: 2px;
+}
+
+.level-badge {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #232634;
+    border: 2px solid #e5c890;
+    color: #e5c890;
+    font-family: "JetBrainsMonoNerdFont-BoldItalic", "JetBrains Mono Nerd Font", monospace;
+}
+
+.level-badge .lv-num {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.level-badge .lv-lbl {
+    font-size: 8px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.85;
+}
+
+/* ── Main Feed ─────────────────────────────── */
+.community-main {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.feed-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.feed-toolbar .feed-title {
+    font-family: "JetBrainsMonoNerdFont-BoldItalic", "JetBrains Mono Nerd Font", monospace;
+    font-size: 16px;
+    color: #f2d5cf;
+    letter-spacing: 0.03em;
+}
+
+.feed-filters {
+    display: flex;
+    gap: 6px;
+}
+
+.feed-filters .chip {
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #b5bfe2;
+    background: #232634;
+    border: 1px solid rgba(255,255,255,0.08);
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.feed-filters .chip:hover {
+    color: #ffffff;
+    border-color: #8caaee;
+}
+
+.feed-filters .chip.active {
+    background: #8caaee;
+    color: #232634;
+    border-color: #8caaee;
+    font-weight: 700;
+}
+
+.feed-card {
+    background: #111827;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03);
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.feed-card:hover {
+    box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+    transform: translateY(-2px);
+}
+
+.feed-card-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px 10px;
+}
+
+.feed-card-head .who {
+    flex: 1;
+    min-width: 0;
+}
+
+.feed-card-head .display-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.feed-card-head .display-name a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.feed-card-head .action-line {
+    font-size: 12.5px;
+    color: #949cbb;
+    margin-top: 1px;
+}
+
+.feed-card-head .action-line .target {
+    color: #8caaee;
+}
+
+.feed-card-head .timestamp {
+    flex: 0 0 auto;
+    font-size: 11px;
+    color: #6b7291;
+}
+
+.feed-card-body {
+    padding: 0 16px 14px;
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: #c6d0f5;
+}
+
+.feed-card-body.discussion {
+    padding-bottom: 16px;
+}
+
+.feed-media {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.feed-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(17,24,39,0) 55%, rgba(17,24,39,0.88) 100%);
+}
+
+.feed-media .media-caption {
+    position: absolute;
+    left: 14px;
+    bottom: 10px;
+    right: 14px;
+    z-index: 2;
+    font-size: 12px;
+    color: #f2d5cf;
+    letter-spacing: 0.02em;
+}
+
+.feed-card-foot {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 10px 16px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.015);
+}
+
+.feed-stat {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #949cbb;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.feed-stat:hover {
+    color: #e5c890;
+}
+
+.feed-stat .icon {
+    font-size: 13px;
+}
+
+.discussion-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    margin-bottom: 8px;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #e5c890;
+    background: rgba(229, 200, 144, 0.1);
+    border: 1px solid rgba(229, 200, 144, 0.35);
+    border-radius: 4px;
+}
+
+/* ── Sidebar ───────────────────────────────── */
+.community-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.sidebar-panel {
+    background: #111827;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.sidebar-panel .panel-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 14px;
+    background: rgba(255,255,255,0.03);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.sidebar-panel .panel-head .title {
+    font-family: "JetBrainsMonoNerdFont-BoldItalic", "JetBrains Mono Nerd Font", monospace;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: #f2d5cf;
+    text-transform: uppercase;
+}
+
+.sidebar-panel .panel-head .count {
+    font-size: 11px;
+    color: #6b7291;
+}
+
+.panel-body {
+    padding: 6px 0;
+}
+
+.friend-row,
+.group-row,
+.discussion-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 14px;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.2s ease;
+}
+
+.friend-row:hover,
+.group-row:hover,
+.discussion-row:hover {
+    background: rgba(140, 170, 238, 0.08);
+}
+
+.mini-avatar {
+    position: relative;
+    flex: 0 0 auto;
+    width: 34px;
+    height: 34px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: #232634;
+    background: linear-gradient(135deg, #babbf1, #8caaee);
+    background-size: cover;
+}
+
+.status-dot {
+    position: absolute;
+    right: -3px;
+    bottom: -3px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    border: 2px solid #111827;
+}
+
+.status-dot.online { background: #a6d189; }
+.status-dot.away { background: #e5c890; }
+.status-dot.offline { background: #626880; }
+
+.friend-row .fname {
+    font-size: 13px;
+    color: #dce1f5;
+}
+
+.friend-row .fstatus {
+    margin-left: auto;
+    font-size: 10.5px;
+    color: #6b7291;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.group-row .gicon {
+    flex: 0 0 auto;
+    width: 34px;
+    height: 34px;
+    border-radius: 6px;
+    background-size: cover;
+    background-position: center;
+}
+
+.group-row .gname {
+    font-size: 13px;
+    color: #dce1f5;
+}
+
+.group-row .gmembers {
+    font-size: 11px;
+    color: #6b7291;
+    margin-top: 1px;
+}
+
+.discussion-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+.discussion-row .dtitle {
+    font-size: 13px;
+    color: #dce1f5;
+    line-height: 1.35;
+}
+
+.discussion-row .dmeta {
+    font-size: 11px;
+    color: #6b7291;
+}
+
+.see-all {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #8caaee;
+    text-decoration: none;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.see-all:hover {
+    color: #f2d5cf;
+    background: rgba(255,255,255,0.03);
+}
+
+/* ============================================
+   BURGER MENU — Shared Styles
+   ============================================ */
+
+.burger-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1000;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    flex: 0 0 auto;
+    order: 1;
+}
+
+.burger-toggle .burger-line {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background-color: #cdd6f4;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.burger-toggle.active .burger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.burger-toggle.active .burger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-toggle.active .burger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.mobile-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 998;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.mobile-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ============================================
+   RESPONSIVE: ≤ 900px — Burger Menu Active
+   ============================================ */
+@media screen and (max-width: 900px) {
+
+    .burger-toggle {
+        display: flex;
+    }
+
+    .mobile-overlay {
+        display: block;
+    }
+
+    .main-nav {
+        position: fixed;
+        top: 0;
+        right: -300px;
+        width: 280px;
+        max-width: 80vw;
+        height: 100vh;
+        height: 100dvh;
+        background: #232634;
+        padding: 80px 20px 24px;
+        box-shadow: -4px 0 24px rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow-y: auto;
+        flex: none;
+    }
+
+    .main-nav.open {
+        right: 0;
+    }
+
+    .main-nav > ul {
+        flex-direction: column;
+        gap: 2px;
+        height: auto;
+    }
+
+    .main-nav > ul > li {
+        position: static;
+    }
+
+    .main-nav > ul > li > a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: auto;
+        padding: 14px 16px;
+        font-size: 1.05rem;
+        color: #cdd6f4;
+        border-radius: 8px;
+    }
+
+    .main-nav > ul > li > a:hover,
+    .main-nav > ul > li > a:focus-visible {
+        background: rgba(255, 255, 255, 0.08);
+        color: #ffffff;
+    }
+
+    .main-nav > ul > li.current > a {
+        box-shadow: none;
+        background: rgba(140, 170, 238, 0.15);
+    }
+
+    .has-submenu > a::after {
+        content: " ▾";
+        font-size: 12px;
+        transition: transform 0.3s ease;
+        margin-left: 6px;
+        opacity: 0.6;
+    }
+
+    .has-submenu.submenu-open > a::after {
+        transform: rotate(180deg);
+        opacity: 1;
+    }
+
+    .has-submenu .submenu {
+        position: static;
+        left: auto;
+        min-width: auto;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.2);
+        border: none;
+        border-radius: 0 0 8px 8px;
+        box-shadow: none;
+        transform: none;
+        padding: 0;
+        margin: 0;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+
+    .has-submenu.submenu-open .submenu {
+        max-height: 300px;
+        padding: 6px 0;
+    }
+
+    .has-submenu:hover .submenu,
+    .has-submenu:focus-within .submenu {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        pointer-events: auto;
+    }
+
+    .submenu li {
+        list-style: none;
+    }
+
+    .submenu a {
+        display: block;
+        font-size: 0.95rem;
+        padding: 11px 16px;
+        text-align: center;
+        color: rgba(205, 214, 244, 0.85);
+        white-space: normal;
+        border-radius: 0;
+        transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .submenu a:hover,
+    .submenu a:focus-visible {
+        background: rgba(140, 170, 238, 0.12);
+        color: #ffffff;
+    }
+
+    /* Header */
+    .headcon {
+        height: auto;
+        min-height: 64px;
+        padding: 10px 16px;
+        justify-content: flex-start;
+        gap: 10px;
+    }
+
+    #logo-holder {
+        width: 56px;
+        order: 0;
+    }
+
+    #logo-holder img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .searchbar {
+        margin-left: auto;
+        order: 2;
+    }
+
+    .searchbar input {
+        width: 140px;
+    }
+
+    .searchbar input:hover,
+    .searchbar input:focus {
+        width: 160px;
+    }
+
+    /* Community layout */
+    .community-wrap {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-banner {
+        flex-wrap: wrap;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    h2 {
+        font-size: 12px;
+    }
+
+    #footer ul {
+        gap: 16px;
+    }
+
+    #footer a {
+        font-size: 11px;
+    }
+}
+
+/* ============================================
+   RESPONSIVE: ≤ 480px
+   ============================================ */
+@media screen and (max-width: 480px) {
+    .searchbar input {
+        width: 110px;
+        font-size: 12px;
+    }
+
+    .searchbar input:hover,
+    .searchbar input:focus {
+        width: 130px;
+    }
+
+    #logo-holder {
+        width: 44px;
+    }
+
+    #logo-holder img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .main-nav {
+        width: 260px;
+        right: -260px;
+    }
+
+    .feed-media {
+        height: 160px;
+    }
+
+    #footer {
+        height: auto;
+        padding: 12px 0;
+    }
+
+    #footer ul {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
