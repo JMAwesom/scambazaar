@@ -1,0 +1,59 @@
+[
+    {
+        "id": "BZ-50A5AF6A",
+        "date": "2026-08-13T02:14:03+00:00",
+        "updated": "2026-08-13T02:21:57+00:00",
+        "name": "James",
+        "email": "Jpalahang11@gmail.com",
+        "message": "Hi",
+        "status": "answered",
+        "responses": [
+            {
+                "date": "2026-08-13T02:14:31+00:00",
+                "sender": "Admin",
+                "message": "Hello"
+            },
+            {
+                "date": "2026-08-13T02:14:34+00:00",
+                "sender": "Admin",
+                "message": "Hello"
+            },
+            {
+                "date": "2026-08-13T02:14:35+00:00",
+                "sender": "Admin",
+                "message": "Hello"
+            },
+            {
+                "date": "2026-08-13T02:21:57+00:00",
+                "sender": "Admin",
+                "message": "a"
+            }
+        ]
+    },
+    {
+        "id": "BZ-1758F2F3",
+        "date": "2026-08-12T07:34:37+00:00",
+        "updated": "2026-08-12T07:38:29+00:00",
+        "name": "James",
+        "email": "jmgamjet@gmail.com",
+        "message": "asdasdasd",
+        "status": "answered",
+        "responses": [
+            {
+                "date": "2026-08-12T07:34:47+00:00",
+                "sender": "Admin",
+                "message": "Hi there"
+            },
+            {
+                "date": "2026-08-12T07:38:23+00:00",
+                "sender": "Admin",
+                "message": "I will make sure iy will be done"
+            },
+            {
+                "date": "2026-08-12T07:38:29+00:00",
+                "sender": "Admin",
+                "message": "hi"
+            }
+        ]
+    }
+]
